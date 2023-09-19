@@ -67,12 +67,14 @@ function NotesPage(props) {
 
     const handleDelete = (id) => {
 
-        id = id
 
-        SetNoteValue((id) => {
+        SetNoteValue((NoteValue) => {
+            console.log(id);
 
             const AfterDelete = NoteValue.filter((obj) => obj.id !== id)
-
+            
+            console.log(AfterDelete);               
+            
             return AfterDelete;
 
         })
