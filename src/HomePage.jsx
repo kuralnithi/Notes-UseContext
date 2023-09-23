@@ -143,6 +143,10 @@ function HomePage(props) {
 
 
         <div className=' addnoteboxmain container-fluid mt-5'>
+
+            <h1 className='mt-3 welcometxt'>Welcome kural</h1>
+
+
             <div className='addnotebox container-fluid '>
 
                 <div className='display-container mt-5'>
