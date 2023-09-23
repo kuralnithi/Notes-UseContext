@@ -6,6 +6,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import NotesPage from './Componenta/NotesPage';
 import TasksPage from './TasksPage';
 import HomePage from './HomePage';
+import SearchPage from './Componenta/SearchPage';
 
 export const MyContext = createContext();
 
@@ -15,8 +16,14 @@ function App(props) {
     const [NoteValue, SetNoteValue] = useState([]);
     const [TaskValue, SetTaskValue] = useState([]);
 
+    const [editmode, setEditmode] = useState(false);
+    const [editedTitle, setEditedtitle] = useState('');
+    const [editedContent, setEditedcontent] = useState('');
+    const [editId, setEditid] = useState('');
 
+    const [editNote, setEditnote] = useState([]);
 
+    const [SearchList, setSearchList] = useState([]);
 
 
 
@@ -46,7 +53,7 @@ function App(props) {
                         <div className='my-5 li  con user'>
                             <span className="my-5   fs-1    brand-name ">
 
-                                <FontAwesomeIcon icon={faUser} />
+                                <FontAwesomeIcon icon={faUser} className='mx-3'/>
 
                                 Kural</span>
 
@@ -62,9 +69,9 @@ function App(props) {
 
                                 <AiFillHome />          <span className='` d-none mx-3 d-md-inline d-sm-inline d-lg-inline d-xl-inline' >{"Home"}</span></Link>
 
-                                <a href="" className="mt-5 fs-4   list-group-item  py2">
+                                <Link to='/SearchPage' className="mt-5 fs-4   list-group-item  py2">
                                     <AiOutlineSearch />
-                                    <span className='d-none fs-4  mx-3 d-md-inline d-sm-inline d-lg-inline d-xl-inline' >{"Search"}</span></a>
+                                    <span className='d-none fs-4  mx-3 d-md-inline d-sm-inline d-lg-inline d-xl-inline' >{"Search"}</span></Link>
 
 
                                 <Link to="/NotesPage" className=" mt-5 fs-4 list-group-item  py2">
@@ -111,10 +118,13 @@ function App(props) {
                 <div className='container-fluid notesmainbox  col-9 '>
 
 
-                    <MyContext.Provider value={{NoteValue,SetNoteValue,TaskValue,SetTaskValue}}>
+                    <MyContext.Provider value={{ NoteValue, SetNoteValue, TaskValue, SetTaskValue, editId, setEditid, editmode, setEditmode, editedTitle, setEditedtitle, editedContent, setEditedcontent, editNote, setEditnote,SearchList, setSearchList }}>
                         <Routes>
 
+
+
                             <Route path='/NotesPage' element={<NotesPage />} />
+                            <Route path='/SearchPage' element={<SearchPage />} />
                             <Route path='/TasksPage' element={<TasksPage />} />
                             <Route path='/' element={<HomePage />} />
 

@@ -73,10 +73,9 @@ function HomePage(props) {
     ////////////////////////////////////
 
     const handleDelete = (id) => {
+        
 
-        id = id
-
-        SetNoteValue((id) => {
+        SetNoteValue(() => {
 
             const AfterDelete = NoteValue.filter((obj) => obj.id !== id)
 
@@ -122,6 +121,8 @@ function HomePage(props) {
         const AfterDelete = TaskValue.filter((obj) => id !== obj.id)
 
         SetTaskValue(AfterDelete);
+    
+    
     };
 
 
@@ -156,7 +157,7 @@ function HomePage(props) {
                                         <div className='card-content'>
                                             <p className='addnotetxt'>  {BoxVal.content2}</p>
 
-                                            <button className="deletebtn" onClick={() => { handleDelete(BoxVal.id) }}>
+                                            <button className="deletebtn" onClick={() => {handleDelete(BoxVal.id) }}>
                                                 <FontAwesomeIcon icon={faTrashCan} />   </button></div>
                                     </div>
                                 </div>
