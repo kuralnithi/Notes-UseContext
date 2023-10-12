@@ -43,9 +43,9 @@ function App(props) {
 
 
     return (
-
-        <div className=' mainbox contaiiner-fluid'>
-            <div className='row'>
+<>
+        <div className=' mainbox contaiiner-fluid ' >
+            <div className='row submainbox'>
 
                 <div className="col-3 sidebox  ">
 
@@ -139,7 +139,9 @@ function App(props) {
 
 
         </div>
-    );
+    
+        </>
+            );
 }
 
 export default App;

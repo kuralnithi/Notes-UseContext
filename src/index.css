@@ -5,20 +5,27 @@
 }
 
 .mainbox {
-    height: 1100px;
-    background: var(--Primary, #E3E8F8);
+height: 100vh;
+     background: var(--Primary, #E3E8F8);
+/* CSS custom properties, also known as CSS variables.  */ 
 }
+.submainbox{
 
+height: 100%;
+
+}
 .sidebarm {
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: 177vh;
+    height: 100vh;
 
 }
 
 .display-container {
+    
     overflow-x: auto;
+
 }
 
 
